@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Responsive header styling */
+
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-item .nav-link,
+.navbar-scroll .navbar-toggler .fas {
+  color: rgb(255, 255, 255);
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-item .nav-link,
+.navbar-scrolled .navbar-toggler .fas {
+  color: #4f4f4f;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scrolled {
+  background-color: #fff;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.fixed-top.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Dropdown on main navbar */
+.mainDropdown {
+  z-index: 1030 !important;
+  border-radius: 0 !important;
+}
+
+.dropdown-item {
+  border-radius: 0 !important;
+}
