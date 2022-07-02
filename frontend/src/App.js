@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header';
+import MainNav from './components/MainNav';
 
 function App() {
-  return <Header />;
+  return <MainNav />;
 }
 
 export default App;

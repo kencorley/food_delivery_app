@@ -36,8 +36,10 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
+# For asynchronous work
 gem "sidekiq"
 
+# For sidekiq monitoring
 gem "sinatra"
 
 group :development, :test do
