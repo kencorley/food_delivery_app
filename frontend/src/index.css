@@ -23,12 +23,28 @@ code {
   color: red !important;
 }
 
+.dd-icon {
+  color: #62c849ff;
+}
+
 .nav-block {
-  background-color: #E3F2FD;
-  height: 5vh;
+  height: 8vh;
 }
 
 .nav-link {
   color: black !important;
+}
+
+.nav-link:hover {
+  color: #62c849ff !important;
+}
+
+.nav-block {
+  border-top: 5px solid #62c849ff;
+}
+
+.review-btn {
+  color: #fff;
+  background-color: #62c849ff !important;
 }
 
