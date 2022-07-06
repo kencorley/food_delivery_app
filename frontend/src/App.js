@@ -1,8 +1,11 @@
 import React from 'react';
 import MainNav from './components/MainNav';
 
-function App() {
-  return <MainNav />;
+export default function App() {
+  return (
+    <React.Fragment>
+      <MainNav />
+    </React.Fragment>
+  );
 }
 
-export default App;

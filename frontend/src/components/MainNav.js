@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/images/logo.webp';
 import {
   MDBContainer,
   MDBNavbar,
@@ -20,50 +21,48 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function MainNav() {
-  const [showBasic, setShowBasic] = useState(false);
+  const [showNavRight, setShowNavRight] = useState(false);
 
   return (
-    <MDBNavbar expand="lg" className="nav-block">
+    <MDBNavbar expand='lg' className='nav-block'>
       <MDBContainer>
-        <MDBNavbarBrand href="#">
-          <img
-            src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
-            height="30"
-            alt=""
-            loading="lazy"
-          />
+        <MDBNavbarBrand className='mb-2'>
+          <img src={logo} height='50' alt='logo' loading='lazy' />
         </MDBNavbarBrand>
 
         <MDBNavbarToggler
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={() => setShowBasic(!showBasic)}
+          type='button'
+          data-target='#navbarRightAlignExample'
+          aria-controls='navbarRightAlignExample'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowNavRight(!showNavRight)}
         >
-          <MDBIcon icon="bars" fas />
+          <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
-        <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav className="ms-auto">
-            <MDBNavbarItem>
-              <MDBNavbarLink aria-current="page">Home</MDBNavbarLink>
+        <MDBCollapse navbar show={showNavRight}>
+          <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
+            <MDBNavbarItem className='px-2'>
+              <MDBNavbarLink aria-current='page' color='info'>Home</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            <MDBNavbarItem className='px-2'>
               <MDBNavbarLink>Reviews</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink>Information</MDBNavbarLink>
+            <MDBNavbarItem className='px-2'>
+              <MDBNavbarLink>Articles</MDBNavbarLink>
             </MDBNavbarItem>
 
             <MDBNavbarItem>
-              <MDBDropdown className="main-dd">
-                <MDBDropdownToggle tag="a" className="nav-link">
-                  Meal Kit Categories
+              <MDBDropdown className='main-dd'>
+                <MDBDropdownToggle tag='a' className='nav-link'>
+                  Meal Kits
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <p className="px-3 pt-3">
-                    <MDBTypography tag="strong" className="dd-category-text">
-                      <MDBIcon fas icon="leaf" /> Diet Types
+                  <p className='px-3 pt-3'>
+                    <MDBTypography tag='strong' className='dd-category-text'>
+                      <MDBIcon fas icon='leaf' className='px-2 dd-icon' />{' '}
+                      Diet Type
                     </MDBTypography>
                   </p>
                   <MDBDropdownDivider></MDBDropdownDivider>
@@ -71,7 +70,13 @@ export default function MainNav() {
                     <MDBDropdownLink>Keto/Carnivore</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Mediterranian</MDBDropdownLink>
+                    <MDBDropdownLink>Mediterranean</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Paleo</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Pescatarian</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
                     <MDBDropdownLink>Vegan</MDBDropdownLink>
@@ -80,25 +85,10 @@ export default function MainNav() {
                     <MDBDropdownLink>Vegetarian</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownDivider></MDBDropdownDivider>
-                  <p className="px-3 pt-2">
-                    <MDBTypography tag="strong" className="dd-category-text">
-                      <MDBIcon fas icon="users" /> Age Groups
-                    </MDBTypography>
-                  </p>
-                  <MDBDropdownDivider></MDBDropdownDivider>
-                  <MDBDropdownItem>
-                    <MDBDropdownLink>Kids</MDBDropdownLink>
-                  </MDBDropdownItem>
-                  <MDBDropdownItem>
-                    <MDBDropdownLink>Adults</MDBDropdownLink>
-                  </MDBDropdownItem>
-                  <MDBDropdownItem>
-                    <MDBDropdownLink>Seniors</MDBDropdownLink>
-                  </MDBDropdownItem>
-                  <MDBDropdownDivider></MDBDropdownDivider>
-                  <p className="px-3 pt-2">
-                    <MDBTypography tag="strong" className="dd-category-text">
-                      <MDBIcon fas icon="carrot" /> People
+                  <p className='px-3 pt-2'>
+                    <MDBTypography tag='strong' className='dd-category-text'>
+                      <MDBIcon fas icon='users' className='px-2 dd-icon' />{' '}
+                      People Type
                     </MDBTypography>
                   </p>
                   <MDBDropdownDivider></MDBDropdownDivider>
@@ -106,27 +96,44 @@ export default function MainNav() {
                     <MDBDropdownLink>Picky Eaters</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
+                    <MDBDropdownLink>Singles</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
                     <MDBDropdownLink>Couples</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Athletes</MDBDropdownLink>
+                    <MDBDropdownLink>Families</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownDivider></MDBDropdownDivider>
+                  <p className='px-3 pt-2'>
+                    <MDBTypography tag='strong' className='dd-category-text'>
+                      <MDBIcon
+                        fas
+                        icon='briefcase-medical'
+                        className='px-2 dd-icon'
+                      />{' '}
+                      Condition Type
+                    </MDBTypography>
+                  </p>
+                  <MDBDropdownDivider></MDBDropdownDivider>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Diabetes</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Heartburn</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Celiac</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>IBS</MDBDropdownLink>
                   </MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
-          </MDBNavbarNav>
-          <MDBNavbarNav className="ms-auto">
-            <MDBNavbarItem>
-              <MDBBtn color="warning" rippleColor="light">
-                <MDBIcon className="me-2" fas icon="star" />
-                Leave a Review
-              </MDBBtn>
-            </MDBNavbarItem>
-            <MDBNavbarItem className="px-3">
-              <MDBBtn color="info" rippleColor="light">
-                <MDBIcon className="me-2" fas icon="user" />
-                Login/Create Account
-              </MDBBtn>
+
+            <MDBNavbarItem className='ms-3'>
+              <MDBBtn className='review-btn'>Leave A Review</MDBBtn>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
